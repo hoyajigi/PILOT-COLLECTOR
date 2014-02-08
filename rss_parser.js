@@ -1,5 +1,5 @@
 var _ = require('underscore');
-var redisQ = require('./node_modules/BIGMAMA-AGUN/redis/RedisQ');
+var RedisQ = require('RedisQ');
 var FeedMe = require('feedme');
 
 var redisq = new RedisQ();

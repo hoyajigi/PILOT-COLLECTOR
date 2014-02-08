@@ -16,10 +16,10 @@
     "url": "https://github.com/PROJECT-BIGMAMA/PILOT-COLLECTOR/issues"
   },
   "dependencies": {
-    "BIGMAMA-AGUN": "git+https://github.com/momamene/BIGMAMA-AGUN.git",
     "feedme": "~0.2.7",
     "underscore": "~1.5.2",
     "dadot": "git+https://github.com/momamene/dadot",
-    "request": "~2.33.0"
+    "better_request": "git+https://github.com/momamene/euckr_curl.git",
+    "RedisQ": "git+https://github.com/momamene/BIGMAMA-AGUN.git"
   }
 }

@@ -1,6 +1,6 @@
 var _ = require('underscore');
 var Dadot = require('dadot');
-var redisQ = require('./node_modules/BIGMAMA-AGUN/redis/RedisQ');
+var RedisQ = require('RedisQ');
 
 var redisq = new RedisQ();
 
