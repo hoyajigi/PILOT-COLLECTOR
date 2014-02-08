@@ -22,6 +22,9 @@
     "request": "~2.33.0",
     "iconv": "~2.0.7",
     "better_request": "git+https://github.com/momamene/euckr_curl.git",
-    "RedisQ": "git+https://github.com/momamene/BIGMAMA-AGUN.git"
+    "RedisQ": "git+https://github.com/momamene/BIGMAMA-AGUN.git",
+    "error": "~2.0.4",
+    "node-icu-charset-detector": "0.0.7",
+    "event": "~1.0.0"
   }
 }
