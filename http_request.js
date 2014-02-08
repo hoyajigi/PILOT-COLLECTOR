@@ -19,3 +19,5 @@ var registerQueue = function (current_key, next_key) {
 _.each(redis_state, function(next_key, current_key) {
     registerQueue(current_key, next_key);
 });
+
+console.log('http_request running');

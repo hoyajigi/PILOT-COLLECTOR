@@ -15,3 +15,5 @@ redisq.waitPop('rss_xml', function(err, xml) {
     });
     parser.write(xml);
 });
+
+console.log('rss_parser running');

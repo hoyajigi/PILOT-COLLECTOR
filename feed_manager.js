@@ -9,4 +9,6 @@ setInterval(function () {
         console.log('feed_manager) feed_url pushed: ' + feed.url);
         redisq.pubPush('feed_url', JSON.stringify(feed));
     });
-}, 1000);
+}, 10000);
+
+console.log('feed_manager running');
