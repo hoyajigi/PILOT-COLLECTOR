@@ -2,6 +2,7 @@ var _ = require('underscore');
 var request = require('request');
 var redisQ = require('./node_modules/BIGMAMA-AGUN/redis/RedisQ');
 var redis_state = require('./assets/next_key.json');
+var request = require('./http_request_impl');
 
 
 var registerQueue = function (current_key, next_key) {
@@ -9,9 +10,9 @@ var registerQueue = function (current_key, next_key) {
     redisq.waitPop(current_key, function(err, value) {
         var json_data = JSON.parse(value);
         console.log('http_request) ' + current_key + ' poped: ' + json_data.url);
-        request(json_data.url, function(req, res) {
+        request.http_request(json_data.url, function(res) {
             console.log('http_request) ' + next_key + ' pushed');
-            redisq.pubPush(next_key, res.body);
+            redisq.pubPush(next_key, res);
         });
     });
 }
