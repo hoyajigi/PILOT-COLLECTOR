@@ -1,0 +1,25 @@
+{
+  "name": "PILOT-COLLECTOR",
+  "version": "0.0.0",
+  "description": "PILOT-COLLECTOR ===============",
+  "main": ".",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PROJECT-BIGMAMA/PILOT-COLLECTOR.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PROJECT-BIGMAMA/PILOT-COLLECTOR/issues"
+  },
+  "dependencies": {
+    "BIGMAMA-AGUN": "git+https://github.com/momamene/BIGMAMA-AGUN.git",
+    "feedme": "~0.2.7",
+    "underscore": "~1.5.2",
+    "dadot": "git+https://github.com/momamene/dadot",
+    "request": "~2.33.0"
+  }
+}
