@@ -17,12 +17,13 @@ var redisq = new RedisQ();
 
 // mongoDB connect
 MongoClient.connect('mongodb://'+config.db_host+':' + config.db_port + '/' + config.db , function(err, db) {
+	var collection = db.collection('cont_data');
+	
 	redisq.waitPop(constants.CONT_TYPE, function(err, data) {
 		
 		var msgType = JSON.parse(data);
    
 		console.log('process dadot !!! ');
-		var collection = db.collection('cont_data');
 		var cont = Dadot.extract(msgType.msg);
 		
 		collection.insert({"link" :  msgType.link , "cont" : cont}, function(err, docs) { 

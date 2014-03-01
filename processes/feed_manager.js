@@ -19,10 +19,6 @@ var redisq = new RedisQ();
 
 var interval  = config.interval;
 
-if(interval < 1800000)
-	interval  = 1800000;
-
-
 var sendOperation = function (keys){
 	keys.forEach(function (key, i) {
 		console.log("operation request : " + key);

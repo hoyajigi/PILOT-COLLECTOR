@@ -2,7 +2,7 @@
 	"db" : "pilot_collecter",
 	"db_host": "127.0.0.1",
 	"db_port": "27017",
-	"interval": 10000,
+	"interval": 60000,
 	"article_cnt" : 1,
 	"feed_cnt" : 1,
 	"requester_cnt" : 1,

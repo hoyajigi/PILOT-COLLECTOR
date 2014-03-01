@@ -22,21 +22,23 @@ MongoClient.connect('mongodb://'+config.db_host+':' + config.db_port + '/' + con
 	
 	if(err) throw err;
 	
+	var collection = db.collection('rss_data');
+	
 	// wait RSS data from redis
 	redisq.waitPop(constants.RSS_TYPE, function(err, data) {
 		var msgType = JSON.parse(data);
    
-		parser.on('item', function(item) {
-        	console.log('rss_parser) article_url pushed : ' + item.link);  
-        	requestType.url = item.link;
-			requestType.key = constants.CONT_TYPE;
-			redisq.pubPush(constants.REQUEST_SEED, JSON.stringify(requestType));  
-    	});
-
 		parser.write(msgType.msg);
 		
 		var json_data = parser.done();
-		var collection = db.collection('rss_data');
+		_.each(json_data.items, function(item) {
+    
+			console.log('rss_parser) article_url pushed : ' + item.link);  
+        	requestType.url = item.link;
+			requestType.key = constants.CONT_TYPE;
+			redisq.pubPush(constants.REQUEST_SEED, JSON.stringify(requestType));
+		});
+
 	
 		collection.insert(json_data, function(err, docs) { 
 			console.log("saved rss data to mongoDB !!"); 
