@@ -1,0 +1,5 @@
+node ./cluster/requester_cluster.js &
+node ./cluster/rss_cluster.js &
+node ./cluster/article_cluster.js &
+sleep 2
+node ./cluster/feed_cluster.js &
