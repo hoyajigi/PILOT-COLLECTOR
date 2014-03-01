@@ -20,6 +20,7 @@ alpha 버전은 RSS 데이터만 지원한다.
     $ git clone https://github.com/PROJECT-BIGMAMA/PILOT-COLLECTOR.git
     $ cd PILOT-COLLECTOR
     $ npm install
+    $ node init.js
     $ ./pilot-collector
 
 
